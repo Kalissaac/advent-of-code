@@ -1,3 +1,15 @@
+//
+//  File.swift
+//  
+//
+//  
+//
+
+import Foundation
+
+public class Input {
+    
+    public let dayOne = """
 408
 1614
 1321
@@ -198,3 +210,6 @@
 1830
 1442
 1224
+""".split(separator: "\n")
+
+}
