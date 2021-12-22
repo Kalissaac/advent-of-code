@@ -2,7 +2,6 @@ package dec01
 
 import (
 	_ "embed"
-	"log"
 	"math"
 	"strconv"
 
@@ -19,20 +18,8 @@ func Main() {
 	println("Part Two:", PartTwo())
 }
 
-func formatInput(input []string) []int {
-	formatted := make([]int, len(input))
-	for i, v := range input {
-		num, err := strconv.Atoi(v)
-		if err != nil {
-			log.Fatal("Could not parse input: ", err)
-		}
-		formatted[i] = num
-	}
-	return formatted
-}
-
 func PartOne() string {
-	input := formatInput(util.ParseInput(raw_input))
+	input := util.ParseInputAsInt(raw_input)
 
 	previous_measurement := input[0]
 	depth_increases := 0
@@ -47,7 +34,7 @@ func PartOne() string {
 }
 
 func PartTwo() string {
-	input := formatInput(util.ParseInput(raw_input))
+	input := util.ParseInputAsInt(raw_input)
 
 	previous_measurement := 0
 	measurement_increases := 0
